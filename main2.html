@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<link rel="stylesheet" href="Hospitals.css" />
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<style>
+		#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 98;
+  font-size: 10px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+	</style>
+</head>
+<body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+	<div class="navbar navbar-inverse">
+		<div class="navbar-brand"></div>
+		<ul class="nav navbar-nav">
+			<li ssclass="active"><a href="others.html">Diseases</a></li>
+			<li><a href="others.html">Hospitals</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Objectives</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="alert alert-success">
+			Welcome to Our HD4U website
+		</div>
+		
+
+	<!-- <div class="container">
+			<ul class="nav nav-tabs">
+			<li class="active"><a href="t.html">Affected</a></li>
+			<li><a href="t.html">Death</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jump To<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#ygn">Yangon</a></li>
+					<li><a href="#mdy">Mandalay</a></li>
+					<li><a href="#npw">Naypyitaw</li>
+					<li><a href="#sgg">Sagaing</li>
+					<li><a href="#Shan">Shan</li>
+					<li><a href="#kyn">Kayin</li>
+					<li><a href="#Kyh">Kayah</li>
+					<li><a href="#kcn">Kachin</li>
+					<li><a href="#chn">Chin</li>
+					<li><a href="#mon">Mon</li>
+					<li><a href="#rke">Rakhine</li>
+					<li><a href="#ayy">Ayeyarwady</li>
+					<li><a href="#bgo">Bago</li>
+					<li><a href="#tni">Tanintharyi</li>
+					<li><a href="#mgy">Magway</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div><br><br> -->
+
+	<div class="container">
+		<h1>Common Diseases in Myanmar</h1><br>
+			<ul class="nav nav-tabs">
+			<li class="active"><a href="main.html">Affected</a></li>
+			<li><a href="main.html">Death</a></li>
+					
+		<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jump To <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#ygn">Yangon</a></li>
+					<li><a href="#mdy">Mandalay</a></li>
+					<li><a href="#shn">Shan</a></li>
+					<li><a href="#kcn">Kachin</a></li>
+					<li><a href="#kyh">Kayah</a></li>
+					<li><a href="#kyn">Kayin</a></li>
+					<li><a href="#mgy">Magway</a></li>
+					<li><a href="#bgo">Bago</a></li>
+					<li><a href="#ayy">Ayeyarwady</a></li>
+					<li><a href="#mon">Mon</a></li>
+					<li><a href="#tni">Tanintharyi</a></li>
+					<li><a href="#chn">Chin</a></li>
+					<li><a href="#npw">NayPyiTaws</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Diseases <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="main.html">HIV</a></li>
+					<li><a href="tba.html">TB</a></li>
+					<li><a href="mira.html">Malaria</a></li>
+					<li><a href="#">Diarrhea</a></li>
+					<li><a href="#">Dysentery</a></li>
+					<li><a href="">Hepatitis</a></li>
+				</ul>
+			</li><br><br>
+
+		<h2 id="ayy">Numbers of people killed by HIV in:<br>Ayeyarwady</h2>
+		<div>
+			<canvas id="c1" width="400" height="100"></canvas>				
+			<canvas id="c2" width="400" height="100"></canvas>	
+		<script src="HIVAyeyarwadyDeath.js"></script>		
+		</div>
+
+		<h2 id="bgo">Numbers of people killed by HIV in:<br>Bago</h2>
+		<div>		
+			<canvas id="c3" width="400" height="100"></canvas>				
+			<canvas id="c4" width="400" height="100"></canvas>
+		<script src="HIVBagoDeath.js"></script>		
+		</div>
+
+		<h2 id="chn">Numbers of people killed by HIV in:<br>Chin</h2>
+		<div>
+			<canvas id="c25" width="400" height="100"></canvas>				
+			<canvas id="c26" width="400" height="100"></canvas>	
+		<script src="HIVChinDeath.js"></script>		
+		</div>
+
+		<h2 id="kcn">Numbers of people killed by HIV in:<br>Kachin</h2>
+		<div>
+			<canvas id="c21" width="400" height="100"></canvas>				
+			<canvas id="c22" width="400" height="100"></canvas>	
+		<script src="HIVKachinDeath.js"></script>		
+		</div>
+
+
+		<h2 id="kyh">Numbers of people killed by HIV in:<br>Kayah</h2>
+		<div>
+			<canvas id="c19" width="400" height="100"></canvas>				
+			<canvas id="c20" width="400" height="100"></canvas>		
+		<script src="HIVKayahDeath.js"></script>		
+		</div>
+
+		<h2 id="kyn">Numbers of people killed by HIV in:<br>Kayin</h2>
+		<div>
+			<canvas id="c17" width="400" height="100"></canvas>				
+			<canvas id="c18" width="400" height="100"></canvas>		
+		<script src="HIVKayinDeath.js"></script>		
+		</div>
+
+		<h2 id="mgy">Numbers of people killed by HIV in:<br>Magway</h2>
+		<div>
+			<canvas id="c13" width="400" height="100"></canvas>				
+			<canvas id="c14" width="400" height="100"></canvas>	
+		<script src="HIVMagwayDeath.js"></script>		
+		</div>
+
+		<<h2 id="mdy">Numbers of people killed by HIV in:<br>Mandalay</h2>
+		<div>
+			<canvas id="c7" width="400" height="100"></canvas>				
+			<canvas id="c8" width="400" height="100"></canvas>	
+		<script src="HIVMandalayDeath.js"></script>		
+		</div>
+
+		<h2 id="mon">Numbers of people killed by HIV in:<br>Mon</h2>
+		<div>
+			<canvas id="c15" width="400" height="100"></canvas>				
+			<canvas id="c16" width="400" height="100"></canvas>	
+		<script src="HIVMonDeath.js"></script>		
+		</div>
+
+		<h2 id="npw">Numbers of people killed by HIV in:<br>Nay Pyi Taw</h2>
+		<div>
+			<canvas id="c9" width="400" height="100"></canvas>				
+			<canvas id="c10" width="400" height="100"></canvas>	
+		<script src="HIVNaypyitawDeath.js"></script>		
+		</div>
+
+	
+
+		<h2 id="rke">Numbers of people killed by HIV in:<br>Rakhine</h2>
+		<div>
+			<canvas id="c29" width="400" height="100"></canvas>				
+			<canvas id="c30" width="400" height="100"></canvas>		
+		<script src="HIVRakhineDeath.js"></script>		
+		</div>
+
+		<div>
+			<canvas id="c11" width="400" height="100"></canvas>				
+			<canvas id="c12" width="400" height="100"></canvas>		
+		<script src="HIVSagaingDeath.js"></script>		
+		</div>
+
+		<h2 id="shn">Numbers of people killed by HIV in:<br>Shan</h2>
+		<div>
+			<canvas id="c23" width="400" height="100"></canvas>				
+			<canvas id="c24" width="400" height="100"></canvas>		
+		<script src="HIVShanDeath.js"></script>		
+		</div>
+
+		<h2 id="tni">Numbers of people killed by HIV in:<br>Tanintharyi</h2>
+		<div>
+			<canvas id="c27" width="400" height="100"></canvas>				
+			<canvas id="c28" width="400" height="100"></canvas>		
+		<script src="HIVTanintharyiDeath.js"></script>		
+		</div>
+
+		<h2 id="ygn">Numbers of people killed by HIV in:<br>Yangon</h2>
+		<div>
+			<canvas id="c5" width="400" height="100"></canvas>				
+			<canvas id="c6" width="400" height="100"></canvas>	
+		<script src="HIVYangonDeath.js"></script>		
+		</div>
+
+
+		<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+ 
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+    </div>
+    
+
+  </div>
+
+
+
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="#"> Zip Zap.com.mm</a>
+  </div>
+
+</div>
+ 
+
+</footer>
+
+</body>
+</html>

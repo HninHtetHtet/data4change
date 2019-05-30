@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<link rel="stylesheet" href="Hospitals.css" />
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<style>
+		#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 98;
+  font-size: 10px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+	</style>
+</head>
+<body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+	<div class="navbar navbar-inverse">
+		<div class="navbar-brand"></div>
+		<ul class="nav navbar-nav">
+			<li ssclass="active"><a href="main.html">Diseases</a></li>
+			<li><a href="others.html">Others</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="DoctorM.html">Number of doctors</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="alert alert-success">
+			Welcome to Our HD4U website
+		</div>
+		
+
+	<!-- <div class="container">
+			<ul class="nav nav-tabs">
+			<li class="active"><a href="t.html">Affected</a></li>
+			<li><a href="t.html">Death</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jump To<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#ygn">Yangon</a></li>
+					<li><a href="#mdy">Mandalay</a></li>
+					<li><a href="#npw">Naypyitaw</li>
+					<li><a href="#sgg">Sagaing</li>
+					<li><a href="#Shan">Shan</li>
+					<li><a href="#kyn">Kayin</li>
+					<li><a href="#Kyh">Kayah</li>
+					<li><a href="#kcn">Kachin</li>
+					<li><a href="#chn">Chin</li>
+					<li><a href="#mon">Mon</li>
+					<li><a href="#rke">Rakhine</li>
+					<li><a href="#ayy">Ayeyarwady</li>
+					<li><a href="#bgo">Bago</li>
+					<li><a href="#tni">Tanintharyi</li>
+					<li><a href="#mgy">Magway</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div><br><br> -->
+
+	<div class="container">
+		<h1></h1>
+			<ul class="nav nav-tabs">
+			<li class="active"><a href="tba.html">Affected</a></li>
+			<li><a href="tbd.html">Death</a></li>
+					
+		<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jump To <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#ygn">Yangon</a></li>
+					<li><a href="#mdy">Mandalay</a></li>
+					<li><a href="#chn">Shan</a></li>
+					<li><a href="#kcn">Kachin</a></li>
+					<li><a href="#kyh">Kayah</a></li>
+					<li><a href="#kyn">Kayin</a></li>
+					<li><a href="#mgy">Magway</a></li>
+					<li><a href="bgo">Bago</a></li>
+					<li><a href="#ayy">Ayeyarwady</a></li>
+					<li><a href="#mon">Mon</a></li>
+					<li><a href="#tni">Tanintharyi</a></li>
+					<li><a href="#chn">Chin</a></li>
+					<li><a href="#npw">NayPyiTaws</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="tba.html
+				" class="dropdown-toggle" data-toggle="dropdown">Diseases <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="main.html">HIV</a></li>
+					<li><a href="tba.html">TB</a></li>
+					<li><a href="main.html">Malaria</a></li>
+					<li><a href="main.html">Diarrhea</a></li>
+					<li><a href="main.html">Dysentery</a></li>
+					<li><a href="main.html">Hepatitis</a></li>
+				</ul>
+			</li><br><br>
+
+			<div>
+			<h4>Kachin</h4>
+			<canvas id="t1" width="400" height="100"></canvas>		
+			<h4>Kayah</h4>	
+			<canvas id="t2" width="400" height="100"></canvas>	
+			<h4>Kayin</h4>		
+			<canvas id="t3" width="400" height="100"></canvas>	
+			<h4>Chin</h4>			
+			<canvas id="t4" width="400" height="100"></canvas>
+			<h4>Sagaing</h4>
+			<canvas id="t5" width="400" height="100"></canvas>		
+			<h4>Tanintharyi</h4>	
+			<canvas id="t6" width="400" height="100"></canvas>	
+			<h4>Bago</h4>		
+			<canvas id="t7" width="400" height="100"></canvas>	
+			<h4>Magway</h4>			
+			<canvas id="t8" width="400" height="100"></canvas>
+			<h4>Mandalay</h4>
+			<canvas id="t9" width="400" height="100"></canvas>		
+			<h4>Mon</h4>	
+			<canvas id="t10" width="400" height="100"></canvas>	
+			<h4>Rakhine</h4>		
+			<canvas id="t11" width="400" height="100"></canvas>	
+			<h4>Yangon</h4>			
+			<canvas id="t12" width="400" height="100"></canvas>
+			<h4>Shan</h4>
+			<canvas id="t13" width="400" height="100"></canvas>		
+			<h4>Ayeyarwady</h4>	
+			<canvas id="t14" width="400" height="100"></canvas>	
+			<h4>Naypyitaw  Council</h4>		
+			<canvas id="t15" width="400" height="100"></canvas>	
+		<script src="TBAffected.js"></script>		
+		</div>
+
+		
+
+		<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+ 
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+    </div>
+    
+
+  </div>
+
+
+
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="#"> Zip Zap.com.mm</a>
+  </div>
+
+</div>
+ 
+
+</footer>
+
+</body>
+</html>
